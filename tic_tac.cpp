@@ -31,6 +31,8 @@ return false;
 }
 
 int main(){
+     int play_Again;
+    do{
     cout<<"The Tic-Tac-Toe started"<<endl;
             char  board[3][3]={{'-','-','-'},
                    {'-','-','-'},
@@ -59,7 +61,13 @@ int main(){
           if(win(board,player)){
             draw_Board(board);
             cout<<"winner of the game is "<<player<<endl;
+            cout<<"want to play Again"<<endl;
+            cout<<"enter 1 to play again or 0 to stop"<<endl;
+            cin>>play_Again;
             break;
+          }
+       else{
+            cout<<"Game State:Ongoing"<<endl;
           }
              
           
@@ -71,7 +79,11 @@ int main(){
    
     if(turn ==9 && ((!win(board,'X') || (!win(board,'o'))))){
           cout<<"The game is draw, nobody won the game"<<endl;
+          cout<<"want to play Again"<<endl;
+          cout<<"enter 1 to play again or 0 to stop"<<endl;
+          cin>>play_Again;
     }
+         }while(play_Again==1);
     return 0;
 
 }
